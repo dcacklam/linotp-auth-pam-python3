@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
 #    linotp-auth-pam-python - LinOTP PAM module for pam_python
@@ -72,8 +72,8 @@ Happy Authenticating!
 '''
 
 import syslog
-import urllib
-import urllib2
+import urllib.parse
+import urllib.request
 import pwd
 import ssl
 
@@ -163,18 +163,18 @@ def pam_sm_authenticate( pamh, flags, argv ):
         params["user"] = pamh.user
         params["pass"] = pamh.authtok
 
-        if config.has_key( "realm" ):
+        if "realm" in config:
             params["realm"] = config.get( "realm" )
 
         if debug:
             syslog.syslog( syslog.LOG_INFO, "calling url %s %r" %
                                                             ( url, params ) )
 
-        data = urllib.urlencode( params )
-        req = urllib2.Request( url, data )
+        data = urllib.parse.urlencode( params ).encode('utf-8')
+        req = urllib.request.Request( url, data )
 
-        response = urllib2.urlopen( req )
-        ret = response.read()
+        response = urllib.request.urlopen( req )
+        ret = response.read().decode('utf-8')
 
         if debug:
             syslog.syslog( ret )
@@ -250,11 +250,11 @@ def check_response( pamh, ret, user, config ):
         params['pass'] = rsp.resp
         params['state'] = state
 
-        data = urllib.urlencode( params )
-        req = urllib2.Request( config.get( 'url' ), data )
+        data = urllib.parse.urlencode( params ).encode('utf-8')
+        req = urllib.request.Request( config.get( 'url' ), data )
 
-        response = urllib2.urlopen( req )
-        ret = response.read()
+        response = urllib.request.urlopen( req )
+        ret = response.read().decode('utf-8')
 
         if config.get( 'debug' ):
             syslog.syslog( "challenge returned %s " % ret )
