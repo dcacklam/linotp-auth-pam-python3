@@ -2,6 +2,7 @@
 #
 #    linotp-auth-pam-python - LinOTP PAM module for pam_python
 #    Copyright (C) 2010 - 2017 KeyIdentity GmbH
+#    Copyright (C) 2026 David Acklam - *unofficial* Python 3 port
 #
 #    This file is part of LinOTP authentication modules.
 #
@@ -22,13 +23,16 @@
 #     Contact: www.linotp.org
 #     Support: www.keyidentity.com
 #
+#     Modified for Python3 compatibility by David Acklam, 2026 (unofficial port). 
+#     For issues with the Python3 version, see dcacklam/linotp-auth-pam-python3 on GitHub. 
+#
 
 # IMPORTANT! This file is imported by setup.py, therefore do not (directly or
 # indirectly) import any module that might not yet be installed when installing
 # pam_py_linotp.
 
-__copyright__ = "Copyright (C) 2010 - 2017 KeyIdentity GmbH"
+__copyright__ = "Copyright (C) 2010 - 2017 KeyIdentity GmbH, Python 3 port Copyright (C) 2026 David Acklam"
 __license__ = "GPLv2+"
 __contact__ = "www.linotp.org"
 __email__ = "linotp@keyidentity.com"
-__version__ = '2.9.1rc0'
+__version__ = '2.9.1rc0-py3'
