@@ -15,10 +15,14 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#     E-mail: linotp@keyidentity.com
+#     Original publisher e-mail: linotp@keyidentity.com
 #     Contact: www.linotp.org
 #     Support: www.keyidentity.com
 #
+
+This is an update of dcacklam/linotp-auth-pam-python from Python2 to Python3. 
+
+dcacklam/linotop-auth-pam-python fixes a handful of bugs in KeyIdentity's orignal (abandoned since 2015) module. 
 
 
 The module pam_linotp.py will install to /lib/security/pam_linotp.py
