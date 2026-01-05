@@ -35,7 +35,7 @@ Also adds new paramters/functionality to match the pam_linotp module that is wri
 The module pam_linotp.py will install to /lib/security/pam_linotp.py
 
 You can use this module with the pam_python.so PAM module like this:
-	auth    [success=1 default=ignore]  pam_python.so /lib/security/pam_linotp.py debug nosslcertverify prompt=[MFA_Enabled]_Enter_Linux_Password: url=https://mylintopserver.local/validate/simplecheck realm=mylintoprealm
+	auth    [success=1 default=ignore]  pam_python.so /lib/security/pam_linotp.py debug nosslcertverify prompt='[MFA_Enabled]_Enter_Linux_Password:' url=https://mylintopserver.local/validate/simplecheck realm=mylintoprealm
 
 Known parameters are:
 
@@ -43,7 +43,7 @@ Known parameters are:
   url:    this is the URL where the linotp server is located
   realm:  if the user should not be searched for in the default realm but in a special realm, you can provide a realm name
   nosslcertverify: Skip SSL certificate verification (To allow using self-signed certificates)
-  prompt: Custom password prompt
+  prompt: Custom password prompt. Use _ in place of spaces (Eg: 'MFA_-_Enter Password:' will display as 'MFA - Enter Password:'). 
 
 
 
