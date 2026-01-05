@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
 #    linotp-auth-pam-python - LinOTP PAM module for pam_python
@@ -48,16 +48,23 @@ setup(
         "Framework :: Pylons",
         "License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)",
         "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
         "Topic :: Internet",
         "Topic :: Security",
         "Topic :: System :: Systems Administration :: Authentication/Directory"
     ],
     zip_safe=False,
-    long_description='LinOTP is an open solution for strong two-factor authentication with One Time Passwords.\n\
-        LinOTP 2 is also open as far as its modular architecture is concerned. \n\
-        LinOTP 2 aims to not bind you to any  decision of the authentication protocol or \n\
-        it does not dictate you where your user information should be stored. \n\
-        This is achieved by its new, totally modular architecture.\n\
-\n\
-        This package contains a PAM module for LinOTP written in python.'
+    python_requires='>=3.6',
+    long_description='''LinOTP is an open solution for strong two-factor authentication with One Time Passwords.
+        LinOTP 2 is also open as far as its modular architecture is concerned.
+        LinOTP 2 aims to not bind you to any decision of the authentication protocol or
+        it does not dictate you where your user information should be stored.
+        This is achieved by its new, totally modular architecture.
+
+        This package contains a PAM module for LinOTP written in python3.'''
 )
